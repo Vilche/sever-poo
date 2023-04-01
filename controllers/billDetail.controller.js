@@ -2,8 +2,7 @@ const { response } = require("express");
 const BillDetail = require("../models/billDetail.model");
 const Product = require("../models/product.model");
 const Bill = require("../models/bill.model");
-const dateformat = require("dateformat")
-
+const dateFormat = ("dateformat");
 
 const getBillDetail= async (req, res = response) => {
     const [billDetail, total] = await Promise.all([
@@ -45,7 +44,7 @@ const getBillDetail= async (req, res = response) => {
         timeZone: America/El_Salvador 
       });
       
-      fechaActual = dateformat(fechaActual, "dd-mm-yyyy hh:MM:ss");
+      fechaActual = dateFormat(fechaActual, "dd-mm-yyyy hh:MM:ss");
       //Dando formato a la fecha
 
     const data = {
