@@ -27,7 +27,7 @@ router.get("/", getBillDetail);
 
 router.get("/:id",
     [
-        check("id", "this id does not exist").isMongoId(),
+        check("id", "El id no existe").isMongoId(),
         check("id").custom(BillDetailExistById),
         validateFields
     ],
@@ -37,29 +37,29 @@ router.get("/:id",
 router.post("/",
     [
         validateJWT,
-        check("buy", "Buy dont can be empty").not().isEmpty(),
-        check("buy", "This is not mongoId").isMongoId(),
-        check("buy").custom(BillExistById),
-        check("quantity", "the quantity dont can be empty").not().isEmpty().isNumeric(),
-        check("product", "product dont can be empty").not().isEmpty(),
-        check("product", "This is not mongoId").isMongoId(),
+        check("bill", "la factura no puede estar vacia").not().isEmpty(),
+        check("bill", "No es un mongoId").isMongoId(),
+        check("bill").custom(BillExistById),
+        check("cantidad", "la cantidad no puede estar vacia").not().isEmpty().isNumeric(),
+        check("product", "El producto no puede estar vacio").not().isEmpty(),
+        check("product", "no es un mongoId").isMongoId(),
         check("product").custom(productExistById),
         validateFields
     ],
-    createDetail);
+    createBillDetail);
 
 
 router.put("/:id",
     [
         validateJWT,
-        check("id", "this detail doesnt exist").isMongoId(),
-        check("id").custom(DetailExistById),
-        check("buy", "Buy dont can be empty").not().isEmpty(),
-        check("buy", "This is not mongoId").isMongoId(),
-        check("buy").custom(BuyExistById),
-        check("quantity", "the quantity dont can be empty").not().isEmpty().isNumeric(),
+        check("id", "Este detalle de factura no existe").isMongoId(),
+        check("id").custom(BillDetailExistById),
+        check("bill", "La compra no puede estar vacia").not().isEmpty(),
+        check("bill", "este no es un mongoId").isMongoId(),
+        check("bill").custom(BillExistById),
+        check("cantidad", "la cantidad no puede estar vacia").not().isEmpty().isNumeric(),
         check("product", "product dont can be empty").not().isEmpty(),
-        check("product", "This is not mongoId").isMongoId(),
+        check("product", "este no es un mongoId").isMongoId(),
         check("product").custom(productExistById),
         validateFields
     ],

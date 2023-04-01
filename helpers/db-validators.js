@@ -16,7 +16,8 @@ const emailExist = async (email = "") => {
 
 const userByIdExist = async (id) => {
   const userExist = await User.findById(id);
-  if (!userExist) throw new Error(`the Id does not exist`); //retorna id y devuelve error si no existe
+  if (!userExist) throw new Error(`the Id does not exist`); 
+  //retorna id y devuelve error si no existe
 };
 
 const categoryExistById = async (id) => {
