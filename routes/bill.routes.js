@@ -54,7 +54,7 @@ router.post
     check("fecha", "la fecha esta vacia").not().isEmpty(),
     check("user", "El usuario debe escribirse").not().isEmpty(),
     check("user").custom(userByIdExist),
-    check("total", "El total esta vacio").not().isEmpty().isNumeric(),
+    
     validateFields
   ], 
   updateBill);

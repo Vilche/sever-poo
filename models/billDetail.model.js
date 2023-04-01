@@ -7,11 +7,6 @@ const BillDetailSchema = Schema({
     required: [true, "Cantidad necesaria"]
   },
 
-  fechaDetail: {
-    type: String,
-    required: true
-  },
-
   totalDetail: {
     type: Number,
   },
