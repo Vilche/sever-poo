@@ -1,0 +1,753 @@
+{
+	"info": {
+		"_postman_id": "cc99b58c-5ccf-49b7-ad6b-bd32eac7386c",
+		"name": "UNIVO",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13101361"
+	},
+	"item": [
+		{
+			"name": "POO Server",
+			"item": [
+				{
+					"name": "auth",
+					"item": [
+						{
+							"name": "Auth Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"test10@google.com\",\n    \"password\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/auth/login",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "User",
+					"item": [
+						{
+							"name": "User Post",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test 10\",\n    \"email\": \"test10@google.com\",\n    \"google\": true,\n    \"password\": \"123456\",\n    \"role\": \"USER_ROLE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/users",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"test updated ddddddd\",\n    \"email\": \"testdawsssss@google.com\",\n    \"password\": \"123456ddd\",\n    \"role\": \"SUPER_ROLE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/users?limit=3&from=7",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "3"
+										},
+										{
+											"key": "from",
+											"value": "7"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2U2YjlkZjBmMmFkZDk4ZTQwNjYxZjUiLCJpYXQiOjE2NzYxNDc3MDIsImV4cCI6MTY3NjE2MjEwMn0.uGGB92V6T3EsLXePQNLW7zw3ZIuDaFpEa_x93IqReOY",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/users/63e80eccb6d1f9229291de91",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"63e80eccb6d1f9229291de91"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "Categories  Put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2M2U2YjlkZjBmMmFkZDk4ZTQwNjYxZjUiLCJpYXQiOjE2NzYyNTkwMjEsImV4cCI6MTY3NjI3MzQyMX0.qfPKq6vgB8Nc98bJLYZoIwGsmyaxEqU0Zko_TMlrTMc",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"names\": \"Orders\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/categories/63e834904b89fbf10fd69820",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										"63e834904b89fbf10fd69820"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Get by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories/63e834904b89fbf10fd69820",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										"63e834904b89fbf10fd69820"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/categories/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories  Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzMjcxMTgsImV4cCI6MTY4MDM0MTUxOH0.FWlGwdrUUW8n3qy7tas-ToOq3aW3BfcUwxX_SPigcT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"limpieza\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/categories",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Product  Put",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Get by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Delete",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{url}}/api/products/1",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Products  Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzMjcxMTgsImV4cCI6MTY4MDM0MTUxOH0.FWlGwdrUUW8n3qy7tas-ToOq3aW3BfcUwxX_SPigcT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"trapeador\",\n    \"category\": \"6427c28f782f9af78d974559\",\n    \"precio\": 7\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/products",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"products"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Find",
+					"item": [
+						{
+							"name": "Find",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": ""
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Upload",
+					"item": [
+						{
+							"name": "Upload File",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/Factura.pdf"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update User File",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/udemy invoice.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Products File",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/udemy invoice.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Products File",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "file",
+											"type": "file",
+											"src": "/Users/erwin_vides/Downloads/udemy invoice.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{url}}/api/uploads/users/63e46b5d919be85552108450",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"uploads",
+										"users",
+										"63e46b5d919be85552108450"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Bill",
+					"item": [
+						{
+							"name": "Bill Post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzMjcxMTgsImV4cCI6MTY4MDM0MTUxOH0.FWlGwdrUUW8n3qy7tas-ToOq3aW3BfcUwxX_SPigcT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"fecha\": \"31-03-2023\",\r\n    \"user\": \"6427c193782f9af78d97453b\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/bill",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"bill"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bill Get",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzMjcxMTgsImV4cCI6MTY4MDM0MTUxOH0.FWlGwdrUUW8n3qy7tas-ToOq3aW3BfcUwxX_SPigcT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/bill",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"bill"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Bill Put",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzMjcxMTgsImV4cCI6MTY4MDM0MTUxOH0.FWlGwdrUUW8n3qy7tas-ToOq3aW3BfcUwxX_SPigcT8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n    \"fecha\":\"01-04-2023\",\r\n    \"user\": \"6427c193782f9af78d97453b\",\r\n    \"total\": 0\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/bill/6427c57f782f9af78d974577",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"bill",
+										"6427c57f782f9af78d974577"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "BillDetail",
+					"item": [
+						{
+							"name": "Get Detail",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzMjcxMTgsImV4cCI6MTY4MDM0MTUxOH0.FWlGwdrUUW8n3qy7tas-ToOq3aW3BfcUwxX_SPigcT8",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{url}}/api/billDetail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"billDetail"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Post Detail",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzNTMxNzIsImV4cCI6MTY4MDM2NzU3Mn0.aJpS3QKvSgOr6UcDwrZSjCLrAyY6X3YQP95fjD8VRc8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"cantidad\": 7,\r\n    \"product\": \"6427c320782f9af78d974563\",\r\n    \"user\": \"6427c193782f9af78d97453b\",\r\n    \"bill\": \"6427c57f782f9af78d974577\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/billDetail/",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"billDetail",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PUT detail",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2NDI3YzE5Mzc4MmY5YWY3OGQ5NzQ1M2IiLCJpYXQiOjE2ODAzNTMxNzIsImV4cCI6MTY4MDM2NzU3Mn0.aJpS3QKvSgOr6UcDwrZSjCLrAyY6X3YQP95fjD8VRc8",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{url}}/api/billDetail",
+									"host": [
+										"{{url}}"
+									],
+									"path": [
+										"api",
+										"billDetail"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "http://localhost:3030"
+		}
+	]
+}
